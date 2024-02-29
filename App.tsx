@@ -8,6 +8,7 @@
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -28,10 +29,23 @@ import {
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
+import { saveWeight } from './data/helper';
+import { observeWeights, Weight, LastWeights } from './data/helper';
+const handleSavePress = async () => {
+  try{
+    await saveWeight({weight: "30", note: "slkdfj"});
+  }
+  catch(err){
+      console.error(err)
+  }
+ 
+
+}
 
 function Section({children, title}: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   return (
+    
     <View style={styles.sectionContainer}>
       <Text
         style={[
@@ -42,6 +56,7 @@ function Section({children, title}: SectionProps): React.JSX.Element {
         ]}>
         {title}
       </Text>
+      <Button onPress={handleSavePress} title="save note"/>
       <Text
         style={[
           styles.sectionDescription,
