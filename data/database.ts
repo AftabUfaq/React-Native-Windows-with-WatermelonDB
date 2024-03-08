@@ -5,8 +5,8 @@ import Weight from './weight';
 import schema from './schema';
 
 const adapter = new SQLiteAdapter({
-  schema,
-  jsi: true
+  schema:schema,
+  jsi: false
 });
 
 export const database = new Database({

@@ -1,5 +1,5 @@
 import {Model} from '@nozbe/watermelondb';
-import {field, readonly, date, text} from '@nozbe/watermelondb/decorators';
+import {field, readonly, date} from '@nozbe/watermelondb/decorators';
 
 export default class Weight extends Model {
   static table = 'weights';

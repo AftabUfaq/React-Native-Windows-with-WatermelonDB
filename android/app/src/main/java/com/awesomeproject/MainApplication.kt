@@ -11,7 +11,8 @@ import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.react.flipper.ReactNativeFlipper
 import com.facebook.soloader.SoLoader
-
+import com.nozbe.watermelondb.jsi.WatermelonDBJSIPackage;
+import com.facebook.react.bridge.JSIModulePackage;
 class MainApplication : Application(), ReactApplication {
 
   override val reactNativeHost: ReactNativeHost =
@@ -19,7 +20,8 @@ class MainApplication : Application(), ReactApplication {
         override fun getPackages(): List<ReactPackage> =
             PackageList(this).packages.apply {
               // Packages that cannot be autolinked yet can be added manually here, for example:
-              // add(MyReactNativePackage())
+             // add(WatermelonDBJSIPackage())
+              
             }
 
         override fun getJSMainModuleName(): String = "index"
